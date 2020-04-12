@@ -49,7 +49,7 @@ def updateLoopiaIP(domain, uname, passw):
 
 if __name__ == '__main__':
     # logging
-    log_handler = RotatingFileHandler('Log.log', maxBytes=20000, backupCount=2)
+    log_handler = RotatingFileHandler('updateLoopiaIPLog.log', maxBytes=20000, backupCount=2)
     log_formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(message)s')
     log_handler.setFormatter(log_formatter)
     logger = logging.getLogger()
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     # config
     config = configparser.ConfigParser()
-    config.read('config.cfg')
+    config.read('updateLoopiaIPConfig.cfg')
     try:
         domain = config['credentials']['domain']
         uname = config['credentials']['uname']
