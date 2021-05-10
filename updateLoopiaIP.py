@@ -20,7 +20,7 @@ def updateLoopiaIP(domains, subdomains, username, password):
         logger.critical(e)
         exit()
 
-    domain_server_url = 'https://api.loopia.se/RPCSERV' 
+    domain_server_url = 'https://api.loopia.se/RPCSERV'
     try:
         client = xmlrpc.client.ServerProxy(domain_server_url, encoding = 'utf-8')
         for d, sd in zip(domains, subdomains):
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     log_formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(message)s')
     log_handler.setFormatter(log_formatter)
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
     logger.addHandler(log_handler)
 
     # config
@@ -65,10 +65,10 @@ if __name__ == '__main__':
     except Exception as e:
         logger.critical('Config file inaccurate')
         exit()
-        
+
     if type(domains) is not list:
         domains = [domains]
     if type(subdomains) is not list:
         subdomains = [subdomains]
 
-    updateLoopiaIP(domains, subdomains, username, password)  
+    updateLoopiaIP(domains, subdomains, username, password)
