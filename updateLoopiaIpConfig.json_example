@@ -1,0 +1,6 @@
+{
+  "domains": ["domain.com", "domain.com"],
+  "subdomains": ["@", "subdomain"],
+  "username": "login@loopiaapi",
+  "password": "your-password"
+}
