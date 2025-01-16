@@ -12,7 +12,7 @@ import xmlrpc.client
 def updateLoopiaIP(domains, subdomains, username, password):
     logger.debug('Updating IP')
     try:
-        ip = requests.get('https://ifconfig.me') # could use https://icanhazip.com, http://checkip.dyndns.org
+        ip = requests.get('https://ipv4.icanhazip.com') # could use https://ifconfig.me, http://checkip.dyndns.org
         ip = ip.text
         logger.debug('Current IP: ' + ip)
     except Exception as e:
