@@ -13,7 +13,7 @@ def updateLoopiaIP(domains, subdomains, username, password):
     logger.debug('Updating IP')
     try:
         ip = requests.get('https://ipv4.icanhazip.com') # could use https://ifconfig.me, http://checkip.dyndns.org
-        ip = ip.text
+        ip = ip.text.replace("\n", "")
         logger.debug('Current IP: ' + ip)
     except Exception as e:
         logger.critical('Current IP retrieval error')
